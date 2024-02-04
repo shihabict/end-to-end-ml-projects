@@ -8,7 +8,7 @@ class ModelEvaluationPipeline:
     def __init__(self) -> None:
         pass
 
-    def main():
+    def main(self):
         try:
             config = ConfigurationManager()
             model_evaluation_config = config.get_model_evaluation_config()
