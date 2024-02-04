@@ -19,7 +19,8 @@ class ModelTrainer:
         train_y = train_data[[self.config.target_column]]
         test_y = test_data[[self.config.target_column]]
 
-        lr = LogisticRegression(random_state=42)
+        lr = LogisticRegression(max_iter=100,random_state=42)
+        # lr = ElasticNet()
         lr.fit(train_x, train_y)
 
         joblib.dump(lr, os.path.join(self.config.root_dir, self.config.model_name))
